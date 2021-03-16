@@ -27,6 +27,14 @@ function findPlaceByCityAndState(state, city) {
     // .first()
 }
 
+function findPlaceByLatLng(lat, lng) {
+  return db("places")
+    .where("lat", lat)
+    // .first()
+    .andWhere("lng", lng)
+    // .first()
+}
+
 function findPlaceByState(state) {
   return db("places").where("state", state)
 }
@@ -40,5 +48,6 @@ module.exports = {
   findPlaceByID,
   findPlaceByCityAndState,
   findPlaceByCity,
-  findPlaceByState
+  findPlaceByState,
+  findPlaceByLatLng
 }
